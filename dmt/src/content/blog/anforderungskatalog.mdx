@@ -1,0 +1,136 @@
+---
+title: Anforderungskatalog von Frau Steffen
+date: 04-24-2024
+img: /MockImage.jpg
+des: In diesem Artikel gehe ich Schritt für Schritt auf den Anforderungskatalog von FrauSteffen ein.
+---
+
+<div className="section">
+## Einleitung
+
+In diesem Artikel arbeite ich für mich den Anforderungskatalog von Frau Steffen durch und mache mir ein Paar Gedanken zu den Stichpunkten, die dort festgehalten wurden.
+
+</div>
+
+<div className="section">
+
+## Projekt 1: Ein KI-Ansprechpartner
+
+
+<div className="quote">
+*"Der Ansprechpartner / die Ansprechpartnerin ist ein/e Expert:in zu Joseph Beuys"*
+</div>
+
+
+Mein erster Einfall hier, wäre ein GPT zu verwenden, was allerdings gesondert mit Daten vom Museum trainiert werden müsste, da die Fehlerquote mit dem Zugang auf das WWW zu groß ist. 
+
+<div className="quote">
+*"Fiktive Person"*
+</div>
+
+Lässt sich mit z.B. Blender modellieren.
+</div>
+
+
+<div className="section">
+**Meine Fragen hierzu:**
+
+
+<ul>
+    <li>Sollte die Person menschlich / möglichst realistisch aussehen? (Cell-Shading??)</li>
+    <li>Steht der Avatar in einer Umgebung? (Das lenkt vielleicht zu sehr ab)</li>
+</ul>
+
+</div>
+
+    <div className="quote">
+    *"Kann den Besucherinnen Fragen, auch kritische, zu Joseph Beuys beantworten"*
+    </div>
+
+    Natürlich sind eigene Trainingsdaten viel geeigneter für ein GPT, allerdings muss man bei diesem Punkt auch erwähnen, dass ein Bot, der Keywords filtert und entsprechend Text zurückgibt vielleicht sinnvoller. Er ist definitiv kontrollierbarer.
+
+
+
+
+    **Meine Fragen hierzu**
+
+    <ul>
+        <li>Wie sollen die Fragen denn gestellt werden? (Über ein Mikrofon - Sprache, Per Eingabe - Texting)</li>
+        <li>Das ist wichtig, da so entschieden werden kann, wie die Inputs verarbeitet werden können (Speech to Text // Text)</li>
+    </ul>
+
+
+<div className="section">
+## Projekt 2: Medientablets
+
+<div className="quote">
+    *"Vermittlung der Informationen durch einen digitalen “Rundgang” mit Tablets"*
+</div>
+
+Irgendwie muss das Tablet erkennen, wo sich der Besucher gerade befindet. GPS ist ungeeignet. A ist das ziemlich datenintensiv und in geschlossenen Räumen ist es schwierig eine genaue Position zu ermitteln. 
+
+Man könnte NFC Chips / OR-Codes installieren, die das Tablet scannen kann, was einen “Zwischenschritt” für den Benutzer bedeuten würde, aber sehr sehr gut funktionieren würde. Das bedeutet aber auch, dass der Raum bei der Gestaltung darauf ausgelegt sein sollte, dass sich diese NFC Chips / QR Codes scannen lassen.
+
+Wenn der Nutzer einen NFC Chip scannt, werden die Daten gefetcht. Ist er fertig, kann er das Fenster wieder schließen und weitergehen.
+
+Das hat auch den Vorteil, dass der Nutzer nicht an eine Route gebunden ist. Er kann sich immer wieder zu seinen Points of Interest bewegen, wie er will.
+
+Hier müsste man allerdings auch an eine Lösung für schlecht Sehende denken, daher sollte ein Audio Transkript zur Verfügung gestellt werden, was ebenfalls implementierbar ist.
+
+<div className="quote">
+    *"2-3 Tablets im Laborraum, die nur für diesen Raum von den Besucherinnen benutzt werden können."*
+</div>
+
+Wenn man diese bei Betritt des Raumes austeilt und wieder einsammelt, dürfte das funktionieren, damit haben wir Entwickler aber eher weniger zutun. Für uns sind dahingehend aber folgende Fragen relevant:
+
+“In welchem Intervall sollen sich die Tablets zurücksetzen? (Täglich, Monatlich, Jährlich)”
+
+Die Tablets sollten sich auf jeden Fall zurücksetzen, weil Daten A Geld und B Speicher kosten (auch wenn eine Datenbank verwendet wird, muss das nicht sein).
+
+
+<div className="quote">
+    *"Menü wo die einzelnen Themen des Raums ausgewählt werden können"*
+</div>
+
+Über eine Art Home Menü zu gehen wäre eine weitere, gute Idee, die man an die NFC Idee anschließen könnte. 
+
+
+<div className="quote">
+    *"Texte, Bilder, Videos usw. zu den Themen un dem im Raum präsentierten (Archivalien auch)"*
+</div>
+
+Alles kein Problem, wenn wir die entsprechenden Informationen zur Verfügung gestellt bekommen, die angezeigt werden sollen.
+
+<div className="quote">
+    *"Weitergefasste Kontextualisierung von Themen hinterlegen (zB. Kontextualisierung von Ausschwitz)"*
+</div>
+
+Man könnte über Links oder eine “für diesen Bereich ebenfalls relevant-Sektor” implementieren.
+
+<div className="quote">
+    *"Feld zum Meinungsaustausch mit Besucher:innen (Pinwand)"*
+</div>
+
+Ein Whiteboard, dass über alle Tablets miteinander kommuniziert ist eine gute Idee. Dann stellt sich mir nur die Frage, wie die Tablets miteinander kommunizieren können? (Gibt es WLAN?)
+
+</div>
+
+<div className="section">
+
+## Projekt 3: Präsentation
+
+<div className="quote">
+    *"Beamerprojektion auf Plexiglasscheibe"*
+</div>
+
+Finde ich soweit sehr gut. Man könnte einen Beamer mit einer Motion Tracking Kamera installieren, der die Fingerbewegung der Nutzer tracken kann und so kann der User dann seinen Interviewpartner auswählen und erhält die entsprechende Information und sieht dann das Interview. 
+
+Ebenfalls interessant wäre eine Kamera, die direkt auf die Eingabefläche zeigt, sodass nur noch der Kontakt mit der Fläche getrackt werden muss.
+
+</div>
+
+---
+
+## Schlusswort
+
+Ich freue mich schon darauf in den direkt Austausch mit Frau Steffen oder Anderen vom Schloss treten zu können auf die Fragen Antworten zu erhalten.

@@ -21,8 +21,11 @@ const config = {
       width: {
         '10vw': '10vw',
         '20vw': '20vw',
+        '22vw': '22vw',
         '25vw': '25vw',
         '30vw': '30vw',
+        '80vw': '80vw',
+        '80p': '80%',
         '100p': '100%'
       },
       colors: {

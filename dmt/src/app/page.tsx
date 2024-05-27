@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
         <div>
-          <main>
+          <main className="w-80p m-auto">
             <h1 className="text-3xl font-bold">Geschriebene Artikel</h1>
 
             <Tabs defaultValue="devlogs" className="w-[100p]">
@@ -53,14 +53,13 @@ export default function Home() {
               <TabsTrigger value="devlogs">DevLogs</TabsTrigger>
               <TabsTrigger value="veranstaltungen">Veranstaltungen</TabsTrigger>
             </TabsList>
-            <TabsContent value="devlogs">
-             {/*Content of first tab*/}
-              {posts.map((post, idx) => (
-               <ArticleCard key={idx} {...post} />
-               ))}
-              
-             <div className="flex flex-wrap">
+            <TabsContent value="devlogs"> 
 
+             <div className="flex flex-wrap gap-5 justify-center">
+              {/*Content of first tab*/}
+              {posts.map((post, idx) => (
+                <ArticleCard key={idx} {...post} />
+                ))}
               </div>
 
             </TabsContent>

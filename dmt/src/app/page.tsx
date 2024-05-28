@@ -5,6 +5,7 @@ import Image from "next/image";
 
 //Contentlayer Imports
 import { allDocs, Doc } from "contentlayer/generated";
+import { compareDesc, format, parseISO } from "date-fns";
 
 
 //ShadCN UI
@@ -41,7 +42,7 @@ export function ArticleCard(post: Doc){
 
 //Root Component
 export default function Home() {
-  const posts = allDocs
+  const posts = allDocs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
         <div>
@@ -58,7 +59,10 @@ export default function Home() {
              <div className="flex flex-wrap gap-5 justify-center">
               {/*Content of first tab*/}
               {posts.map((post, idx) => (
-                <ArticleCard key={idx} {...post} />
+
+                  <ArticleCard key={idx} {...post} />
+
+              
                 ))}
               </div>
 

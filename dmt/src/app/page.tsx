@@ -12,7 +12,7 @@ import {
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// FIXME: Hier fehlt ein Interface für das Doc
+
 interface ArtikelInterface {
   title: string;
   des: string;
@@ -22,7 +22,7 @@ interface ArtikelInterface {
 }
 
 // Base Layout for the Cards
-export function ArticleCard({ title, des, date, slugParams, img }: ArtikelInterface) {
+function ArticleCard({ title, des, date, slugParams, img }: ArtikelInterface) {
   const path: string = "blog/" + slugParams;
 
   return (

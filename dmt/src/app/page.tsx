@@ -1,6 +1,8 @@
+"use client"
 // Contentlayer Imports
 import { allDocs, Doc } from "contentlayer/generated";
 import { compareDesc, format, parseISO } from "date-fns";
+import * as React from "react";
 
 // ShadCN UI
 import {
@@ -12,6 +14,19 @@ import {
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
+
+import { ModeToggle } from "@/components/ui/themebutton";
 
 interface ArtikelInterface {
   title: string;
@@ -41,12 +56,22 @@ function ArticleCard({ title, des, date, slugParams, img }: ArtikelInterface) {
 // Root Component
 export default function Home() {
   const posts = allDocs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+  };
+
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.des.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <div>
-      <main className="w-80p m-auto">
+    <div className="flex bg-white dark:bg-slate-900">
+      <main className="w-70p">
         <h1 className="text-3xl font-bold">Geschriebene Artikel</h1>
-
+        <ModeToggle />
         <Tabs defaultValue="devlogs" className="w-[100p]">
           <TabsList className="grid w-[20vw] grid-cols-2">
             <TabsTrigger value="devlogs">DevLogs</TabsTrigger>
@@ -65,6 +90,27 @@ export default function Home() {
           </TabsContent>
         </Tabs>
       </main>
+
+      <aside className="w-30p mt-20 pl-5 pr-5">
+        <Command>
+          <CommandInput 
+            placeholder="Type a command or search..." 
+            onValueChange={handleSearchChange}
+          />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="Articles">
+              {filteredPosts.map((post, idx) => (
+                <CommandItem key={idx} onSelect={() => window.location.href = `blog/${post.slugParams}`}>
+                  {post.title}
+                  <CommandShortcut>{format(parseISO(post.date), "PPP")}</CommandShortcut>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+            <CommandSeparator />
+          </CommandList>
+        </Command>
+      </aside>
     </div>
   );
 }

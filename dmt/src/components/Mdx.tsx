@@ -4,21 +4,21 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className={"mt-2 scroll-m-20 text-7xl font-bold tracking-tight"}
+      className={"mt-2 scroll-m-20 text-6xl font-bold tracking-tight"}
       {...props}
     />
   ),
 
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className={"mt-4 mb-1 scroll-m-20 text-3xl font-bold tracking-tight"}
+      className={"mt-4 mb-1 scroll-m-20 text-4xl font-bold tracking-tight"}
       {...props}
     />
   ),
 
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className={"mt-2 scroll-m-20 text-9xl font-bold tracking-tight"}
+      className={"mt-2 scroll-m-20 text-2xl font-bold tracking-tight"}
       {...props}
     />
   ),

@@ -1,0 +1,218 @@
+---
+title: Flutter Flow
+date: 06-06-2024
+img: /articleheads/katalog.jpeg
+des: In diesem Artikel gehe ich auf die Arbeit mit Flutter Flow ein und zeige die erste Version der App
+---
+<div className="section">
+# Einleitung
+Heute möchte ich zeigen, wie weit wir mit dem Flutter Flow Projekt gekommen sind und darüber hinaus ein bisschen mehr Kontext zu Flutter Flow an sich liefern.
+</div>
+
+<div className="section">
+# Overview
+![Flutter Flow Work View](/articlecontents/flutter-flow/GUI.png)
+Die GUI von Flutter ist recht überladen und schmeißt einem die ganzen Funktionalitäten sehr entgegen. 
+Ganz links ist eine Navbar, mit der zwischen den verschiedenen Tools, die Flutter Flow bietet gewechselt werden kann.
+Darunter befinden sich Tools wie:
+
+<ul>
+    <li>Widget Palette</li>
+    <li>Widget Tree</li>
+    <li>Storyboard (Visualisierung von Page Routes)</li>
+    <li>Variablen definieren</li>
+    <li>Firestore</li>
+    <li>Cloud Funktionen</li>
+    <li>Content Management System (wird gleich noch näher thematisiert)</li>
+</ul>
+
+</div>
+
+# Custom Navigation Bar
+Die erste wichtige Funktionalität, die unsere Anwendung haben sollte, war eine Navigation Bar auf der linken Seite mit der zwischen den verschiedenen Seiten gewechselt werden kann.
+Das war uns bereits viel zu umständlich in der Umsetzung mit Flutter Flow, daher erstellten wir dafür eine Custom Componente und schrieben den Code dafür selbst:
+
+```js
+  // Automatic FlutterFlow imports
+  import '/backend/backend.dart';
+  import '/backend/schema/enums/enums.dart';
+  import '/flutter_flow/flutter_flow_theme.dart';
+  import '/flutter_flow/flutter_flow_util.dart';
+  import '/custom_code/widgets/index.dart'; // Imports other custom widgets
+  import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+  import 'package:flutter/material.dart';
+  // Begin custom widget code
+  // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+  class Navigation extends StatefulWidget {
+    const Navigation({
+      super.key,
+      this.width,
+      this.height,
+      required this.selectedIndex,
+      required this.goObjects,
+      required this.goTimeline,
+      required this.goGuestbook,
+      required this.goQrCode,
+      required this.backgroundColor,
+      required this.indicatorColor,
+      required this.goTopics,
+      required this.goGuide,
+    });
+
+    final double? width;
+    final double? height;
+    final int selectedIndex;
+    final Future Function() goObjects;
+    final Future Function() goTimeline;
+    final Future Function() goGuestbook;
+    final Future Function() goQrCode;
+    final Color backgroundColor;
+    final Color indicatorColor;
+    final Future Function() goTopics;
+    final Future Function() goGuide;
+
+    @override
+    State<Navigation> createState() => _NavigationState();
+  }
+
+  class _NavigationState extends State<Navigation> {
+    @override
+    Widget build(BuildContext context) {
+      return NavigationRail(
+        destinations: const [
+          NavigationRailDestination(
+            icon: Icon(Icons.photo_library_outlined),
+            selectedIcon: Icon(Icons.photo_library),
+            label: Text('Objekte'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.topic_outlined),
+            selectedIcon: Icon(Icons.topic),
+            label: Text('Themen'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.sort_outlined),
+            selectedIcon: Icon(Icons.sort),
+            label: Text('Zeitleiste'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.forum_outlined),
+            selectedIcon: Icon(Icons.forum),
+            label: Text('Gästebuch'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.qr_code_outlined),
+            selectedIcon: Icon(Icons.qr_code),
+            label: Text('QR-Code'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.co_present_outlined),
+            selectedIcon: Icon(Icons.co_present),
+            label: Text('Guide'),
+          ),
+        ],
+        selectedIndex: widget.selectedIndex,
+        labelType: NavigationRailLabelType.all,
+        groupAlignment: 0,
+        onDestinationSelected: (selectedIndex) {
+          switch (selectedIndex) {
+            case 0:
+              widget.goObjects();
+            case 1:
+              widget.goTopics();
+            case 2:
+              widget.goTimeline();
+            case 3:
+              widget.goGuestbook();
+            case 4:
+              widget.goQrCode();
+            case 5:
+              widget.goGuide();
+          }
+        },
+        backgroundColor: widget.backgroundColor,
+        indicatorColor: widget.indicatorColor,
+      );
+    }
+  }
+```
+
+<div className="section">
+# Firebase
+Die Integration von Firebase ist sehr einfach gewesen und ließ sich über die GUI von Flutter Flow verbinden.
+![Flutter Flow Firebase Integration](/articlecontents/flutter-flow/firebase.png)
+
+Hier haben wir verschiedene Datentypen angegebenen, um z.B. die Objekte in der App darstellen und positionieren zu können.
+</div>
+
+
+<div className="section">
+# CMS
+![Flutter Flow CMS add Pop-Up](/articlecontents/flutter-flow/addScreen.png)
+Das CMS von Flutter ist sehr simpel aufgebaut. Über ein Pop-Up lassen sich Objekte einfach hinzufügen, indem die angezeigten Input Felder ausgefüllt werden.
+
+
+![Delete eines Kommentars](/articlecontents/flutter-flow/kommentare.png)
+Auch die Kommentare lassen sich hierüber einfach verwalten. Mit einen Klick auf dem Mülleimer lassen sich geschriebene Kommentare wieder entfernen.
+</div>
+
+<div className="section">
+# Kompilierte Version
+
+## Objekte
+![Kompilierte Objete Ansicht](/articlecontents/flutter-flow/objekte.png)
+Nach aktuellem Stand werden alle eingetragenen Elemente aus dem CMS heraus genommen und entsprechend mit ihren angegebenen Attributen angezeigt.
+
+
+
+Mit einem Klick auf das jeweilige Element wird dann auch die Beschreibung des Elements angezeigt.
+
+
+## Kommentare
+![Kompilierte Kommentar Ansicht](/articlecontents/flutter-flow/kommentar.png)
+Die Kommentare werden, genau wie die Objekte auch direkt aus der Firebase Datenbank heraus genommen und entsprechend angezeigt.
+
+![Kommentar hinzufügen](/articlecontents/flutter-flow/addcomment.png)
+Es lässt sich auch bereits ein Kommentar hinzufügen, der dann über die Datenbank in die App eingearbeitet wird.
+
+## Zeitleiste
+
+![Kompilierte Zeitleiste](/articlecontents/flutter-flow/timeline.png)
+Die Zeitleiste ist nach aktuellem Stand noch nicht fertig, wird aber noch nachgearbeitet.
+Die Zeitleiste greift ebenfalls auf die Datenbank und damit auf das CMS zurück, damit das Museum ein möglichst leichtes Spiel mit dem Einpfelgen der Daten hat.
+
+## QR Code Scanner
+Der QR Code Scanner ist nach aktuellem Stand nur ein Button, da wir ohne ein Gerät zum Testen nicht wirklich überprüfen können, ob wir auf die Kamera des Geräts zugreifen und einen QR Code scannen können.
+
+# Compiler über den Browser
+Das aber wirklich schlimmste an Flutter Flow ist die Möglichkeit die Anwendung im Browser zu kompilieren und zu testen, da diese Variante einfach viel zu viele Fehler aufweist. Hier ein Paar Gründe, warum diese Variante schlicht unzureichend ist:
+
+### Ladezeit
+![Ladezeit](/articlecontents/flutter-flow/survingtime.png)
+Die Zeit, die Flutter Flow zum kompilieren der Anwendung braucht beträgt im Schnitt 6 Minunten. Das ist während der Arbeit einfach extrem hinderlich (Hier im Beispiel sind es sogar 12 Minuten).
+
+### Instabilität
+Fürs reine Testing einer bestimmten Funktion ist der Compiler auch nicht geeignet, denn dann ist die Performance der Anwendung so schlecht, dass man die Komponente nur schwer, oder gar nicht erreicht, weil die Anwendung vorher abstürzt.
+
+### Ansichten
+Theoretisch bietet der Compiler die Möglichkeit die Bildschirmgröße während der Laufzeit zu verändern, was aber einfach dazu führt, dass sich das Fenster aufhängt.
+
+</div>
+
+
+---
+
+
+# Schlusswort 
+
+## Flutter Flow
+Die UI von Flutter Flow war im ersten Moment vor Allem eines. Überforderdend. Ich für meinen Teil (und alle außer Lukas Holländer) haben noch nie mit Flutter Flow gearbeitet und weichen im Allgemeinen auch nicht auf Low Code / No Code Alternativen aus, einfach aus dem einfachen Grund, dass wir **Programmierer** sind und dieser Aspekt uns einfach mehr gefällt, weil wir mehr Kontrolle über den Code und das Endergebnis haben. Besonders der Aspekt des "klimafreundlichen Codes" abstrahiert sich durch solche GUI Tools vollkommen, was mir zum Beispiel auch überhaupt nicht zusagt.
+Dieses Tool sieht schick aus, kann die Arbeit auf Code Ebene besonders mit den noch existierenden Fehlern aber auf keinen Fall ersetzen.
+
+## CMS Option
+Was an Flutter Flow aber wirklich schick ist, ist die schnelle Integrationsmöglichkeit von Firebase und dem mitgelieferten Content Management System, welches ermöglicht Daten sehr schnell zu ändern. Auch hier wäre mir die Arbeit mit einer Datenbank wie MongoDB oder SQL aber lieber gewesen. Der Vorteil, den ich hier aber ganz klar sehe, ist die Leichtigkeit der Datenpflege und Verwaltung der Kommentare für das Schloss Moyland an sich.
+
+
+
+

@@ -4,14 +4,14 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className={"mt-2 scroll-m-20 text-4xl font-bold tracking-tight"}
+      className={"mt-5 scroll-m-20 text-4xl font-bold tracking-tight"}
       {...props}
     />
   ),
 
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className={"mt-4 mb-1 scroll-m-20 text-3xl font-bold tracking-tight"}
+      className={"mt-2 mb-1 scroll-m-20 text-3xl font-bold tracking-tight"}
       {...props}
     />
   ),
@@ -24,11 +24,11 @@ const components = {
   ),
 
   img: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <img className={"mt-2 scroll-m-20 text-9xl tracking-tight"} {...props} />
+    <img className={"mt-2 scroll-m-20 text-9xl tracking-tight rounded-sm"} {...props} />
   ),
 
   em: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <em className={"  border-l-4 border-white mt-2 text-1xl"} {...props} />
+    <em className={"  border-l-4 border-white mt-2 text-1xl rounded-sm"} {...props} />
   ),
 };
 

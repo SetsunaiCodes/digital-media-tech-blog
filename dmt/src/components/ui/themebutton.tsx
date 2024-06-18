@@ -16,6 +16,7 @@ export function ModeToggle() {
   const { setTheme } = useTheme()
  
   return (
+    //FIXME: Fix Lightmode (Text colors, Box Colors)
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">

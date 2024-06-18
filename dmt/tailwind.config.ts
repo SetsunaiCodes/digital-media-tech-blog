@@ -19,6 +19,13 @@ const config = {
     },
     extend: {
       height: {
+        '5vh': '5vh',
+        '8vh': '8vh',
+        '10vh': '10vh',
+        '30vh': '30vh',
+        '50vh': '50vh',
+        '60vh': '60vh',
+        '95vh': '95vh',
         '100p': '100%'
       },
       width: {

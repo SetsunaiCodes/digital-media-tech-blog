@@ -10,7 +10,7 @@ import { FC, useRef } from "react";
 
 
 /*Stylesheets*/
-
+import "./ArtikelView.css"
 
 
 
@@ -27,13 +27,31 @@ function getDocFromParams(slug: string) {
   return doc;
 }
 
+//TODO Den Post Header in den Main Bereich rein packen
 const Page: FC<pageProps> = ({ params }) => {
   const doc = getDocFromParams(params.slug);
 
   return (
-    <main>
+    <div>
+      
+      <main>
+        <div className="article-container">
+          <div className="article-head-container">
+          <img src={doc.img} alt="Articlehead" />
+          <div className="airticle-head-sub-container">
+          <h1>{doc.title}</h1>
+          <span>{doc.date}</span>
+          <p>{doc.des}</p>
+        </div>
+      </div>
           <Mdx code={doc.body.code} />
-    </main>
+
+          </div>
+      </main>
+      <aside>
+        
+      </aside>
+    </div>
   );
 };
 

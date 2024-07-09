@@ -14,7 +14,6 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      //FIXME: Padding left zu den Tabs hinzufügen, damit sie näher an den Artikel Cards sind.
       "inline-flex h-10 w-[20vw] items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
       className
     )}

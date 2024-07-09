@@ -31,6 +31,7 @@ const config = {
       width: {
         '10vw': '10vw',
         '20vw': '20vw',
+        '21vw': '21vw',
         '22vw': '22vw',
         '25vw': '25vw',
         '30vw': '30vw',

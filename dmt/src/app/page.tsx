@@ -25,9 +25,9 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import Navbar from "@/components/custom/Navbar";
 
-//Custom Components
-import Highlight from "@/components/custom/highlight";
+
 
 interface ArtikelInterface {
   title: string;
@@ -70,30 +70,17 @@ export default function Home() {
 
   return (
     <div>
-      <Highlight/>
-    <div className="flex bg-white dark:bg-slate-900">
+    <Navbar/>
+    <div className="flex bg-slate-900 px-10 pt-5">
           <main className="w-70p">
-            <h1 className="text-3xl font-bold">Geschriebene Artikel</h1>
-            <Tabs defaultValue="devlogs" className="w-[100p]">
-              <TabsList className="grid w-[20vw] grid-cols-2">
-                <TabsTrigger value="devlogs">DevLogs</TabsTrigger>
-                <TabsTrigger value="veranstaltungen">Veranstaltungen</TabsTrigger>
-              </TabsList>
-              <TabsContent value="devlogs">
-                <div className="flex flex-wrap gap-5 justify-center">
-                  {/* Content of first tab */}
+          <div className="flex flex-wrap gap-5 justify-center">
                   {posts.map((post, idx) => (
                     <ArticleCard key={idx} {...post} />
                   ))}
                 </div>
-              </TabsContent>
-              <TabsContent value="veranstaltungen">
-                {/* Content of second tab */}
-              </TabsContent>
-            </Tabs>
           </main>
 
-          <aside className="w-30p mt-20 pl-5 pr-5">
+          <aside className="w-30p pl-5">
             <Command>
               <CommandInput 
                 placeholder="Type a command or search..." 

@@ -75,3 +75,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+::-webkit-scrollbar{
+  width: 0 ;
+}
+
+.pb{
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.react-icon{
+  font-size: 40px;
+}

@@ -1,0 +1,13 @@
+footer{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 3, 11);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.nav-icon{
+    font-size: 22px;
+}

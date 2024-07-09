@@ -1,3 +1,7 @@
+body,html{
+  color: rgb(195, 200, 219);
+  scroll-behavior: smooth;
+}
 .article-head-container{
   height: auto;
   width: auto;
@@ -10,8 +14,8 @@
 }
 
 .article-head-container img{
-  height: 35vh;
-  width: 30vw;
+  height: 60vh;
+  width: 50vw;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -22,7 +26,7 @@
 }
 
 .article-head-container p{
-  width: 350px;
+  width: auto;
   font-weight: 600;
   text-align: center;
 }
@@ -41,8 +45,8 @@
     top: 0;
     right: 0;
     width: 16%;
-    height: auto;
-    overflow-y: auto;
+    height: 90vh;
+    overflow-y: scroll;
   }
   
   .toc-item{
@@ -72,3 +76,42 @@
     height: auto;
     margin: 0 auto;
   }
+
+  .content-link{
+    color: rgb(0, 123, 255);
+    font-weight: 500;
+}
+
+.content-link:hover{
+  color: rgb(34, 103, 177);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.image-gallery{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.image-gallery img{
+  width: 45%;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.quote{
+  margin: 15px 0;
+}
+
+ul{
+  margin: 15px 0;
+}
+
+ul li{
+  background-color: rgb(5, 18, 48);
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  font-weight: 600;
+}

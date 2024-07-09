@@ -1,20 +1,19 @@
 ---
-title: Anforderungskatalog von Frau Steffen
+title: 📜Anforderungskatalog von Frau Steffen
 date: 04-24-2024
 img: /articleheads/katalog.jpeg
-des: In diesem Artikel gehe ich Schritt für Schritt auf den Anforderungskatalog von FrauSteffen ein.
+des: In diesem Artikel gehe ich Schritt für Schritt auf den Anforderungskatalog von Frau Steffen ein.
 ---
 
 <div className="section">
-## Einleitung
+## 📕Einleitung
 
-In diesem Artikel arbeite ich für mich den Anforderungskatalog von Frau Steffen durch und mache mir ein Paar Gedanken zu den Stichpunkten, die dort festgehalten wurden.
-
+In diesem Artikel arbeite ich sequentiell den Anforderungskatalog von Frau Steffen durch und beleuchte dabei auch die Anmerkungen zu den anderen Projekten.
 </div>
 
 <div className="section">
 
-## Projekt 1: Ein KI-Ansprechpartner
+## 🤖Ein KI-Ansprechpartner
 
 
 <div className="quote">
@@ -22,23 +21,22 @@ In diesem Artikel arbeite ich für mich den Anforderungskatalog von Frau Steffen
 </div>
 
 
-Mein erster Einfall hier, wäre ein GPT zu verwenden, was allerdings gesondert mit Daten vom Museum trainiert werden müsste, da die Fehlerquote mit dem Zugang auf das WWW zu groß ist. 
+Mein erster Einfall hier, wäre ein GPT zu verwenden, was allerdings gesondert mit Daten vom Museum trainiert werden müsste, da die Fehlerquote mit dem Zugang auf das WWW zu groß ist. Alternativ kann ein RASA verwendet werden. RASA Systeme sind keine Large Language Models. Sie bauen ihre Antworten aus verschiedenen, voreingestellten Textschnipseln zusammen und versuchen so eine passende Antwort zu geben. 
 
 <div className="quote">
 *"Fiktive Person"*
 </div>
 
-Lässt sich mit z.B. Blender modellieren.
+**Person** ist hier ein wichtiges Wording, denn meint Person tatsächlich einen Avatar, eine fotorealistische Person, oder wie ist Person zu interpretieren.
 </div>
 
 
 <div className="section">
-**Meine Fragen hierzu:**
-
 
 <ul>
-    <li>Sollte die Person menschlich / möglichst realistisch aussehen? (Cell-Shading??)</li>
-    <li>Steht der Avatar in einer Umgebung? (Das lenkt vielleicht zu sehr ab)</li>
+    <li>🧑🏻‍🦲Ein Avatar wirkt auf den Regelbesucher vielleicht abschreckend. Sicher, dass man hier nicht eher auf einen Chat setzen sollte?</li>
+    <li>🧑🏻Sollte die Person menschlich / möglichst realistisch aussehen? (Alt. Comic Figur?)</li>
+    <li>🌳teht der Avatar in einer Umgebung? (Das lenkt vielleicht zu sehr ab)</li>
 </ul>
 
 </div>
@@ -46,45 +44,36 @@ Lässt sich mit z.B. Blender modellieren.
     <div className="quote">
     *"Kann den Besucherinnen Fragen, auch kritische, zu Joseph Beuys beantworten"*
     </div>
-
-    Natürlich sind eigene Trainingsdaten viel geeigneter für ein GPT, allerdings muss man bei diesem Punkt auch erwähnen, dass ein Bot, der Keywords filtert und entsprechend Text zurückgibt vielleicht sinnvoller. Er ist definitiv kontrollierbarer.
-
-
-
-
-    **Meine Fragen hierzu**
+    
+    Das hängt ganz vom spezifischen Training des Modells ab und wie gut die Content Filter des RASA / GPT letzten Endes geflegt sind. Machbar ist das aber alle Male.
 
     <ul>
-        <li>Wie sollen die Fragen denn gestellt werden? (Über ein Mikrofon - Sprache, Per Eingabe - Texting)</li>
-        <li>Das ist wichtig, da so entschieden werden kann, wie die Inputs verarbeitet werden können (Speech to Text // Text)</li>
+        <li>💻Wie sollen die Fragen denn gestellt werden? (Über ein Mikrofon - Sprache, Per Eingabe - Texting)</li>
+        <li>🎙️Das ist wichtig, da so entschieden werden kann, wie die Inputs verarbeitet werden können (Speech to Text // Text)</li>
     </ul>
 
 
 <div className="section">
-## Projekt 2: Medientablets
+## 📱Medientablets
 
 <div className="quote">
     *"Vermittlung der Informationen durch einen digitalen “Rundgang” mit Tablets"*
 </div>
+Es ist wichtig, dass das Tablet erkennen kann, wo sich der Besucher gerade befindet. GPS ist hierfür nicht ideal, da es datenintensiv ist und in geschlossenen Räumen Schwierigkeiten bei der genauen Positionsbestimmung gibt.
 
-Irgendwie muss das Tablet erkennen, wo sich der Besucher gerade befindet. GPS ist ungeeignet. A ist das ziemlich datenintensiv und in geschlossenen Räumen ist es schwierig eine genaue Position zu ermitteln. 
+Eine Möglichkeit wäre, NFC-Chips oder QR-Codes zu installieren, die das Tablet scannen kann. Dies würde zwar einen zusätzlichen Schritt für den Nutzer bedeuten, aber sehr zuverlässig funktionieren. Damit diese Technologie gut funktioniert, sollten die Räume so gestaltet werden, dass das Scannen der NFC-Chips oder QR-Codes problemlos möglich ist.
+<br/>
+Wenn der Nutzer einen NFC-Chip scannt, werden die benötigten Daten abgerufen. Sobald er fertig ist, kann er das Fenster einfach schließen und weitergehen. Ein großer Vorteil dieses Systems ist, dass der Nutzer nicht an eine feste Route gebunden ist. Er kann sich frei zwischen seinen Interessenspunkten bewegen, wie es ihm gefällt.
 
-Man könnte NFC Chips / OR-Codes installieren, die das Tablet scannen kann, was einen “Zwischenschritt” für den Benutzer bedeuten würde, aber sehr sehr gut funktionieren würde. Das bedeutet aber auch, dass der Raum bei der Gestaltung darauf ausgelegt sein sollte, dass sich diese NFC Chips / QR Codes scannen lassen.
-
-Wenn der Nutzer einen NFC Chip scannt, werden die Daten gefetcht. Ist er fertig, kann er das Fenster wieder schließen und weitergehen.
-
-Das hat auch den Vorteil, dass der Nutzer nicht an eine Route gebunden ist. Er kann sich immer wieder zu seinen Points of Interest bewegen, wie er will.
-
-Hier müsste man allerdings auch an eine Lösung für schlecht Sehende denken, daher sollte ein Audio Transkript zur Verfügung gestellt werden, was ebenfalls implementierbar ist.
-
+Es wäre auch wichtig, an eine Lösung für sehbehinderte Menschen zu denken. Ein Audio-Transkript könnte hier hilfreich sein und wäre ebenfalls umsetzbar.
 <div className="quote">
     *"2-3 Tablets im Laborraum, die nur für diesen Raum von den Besucherinnen benutzt werden können."*
 </div>
 
 Wenn man diese bei Betritt des Raumes austeilt und wieder einsammelt, dürfte das funktionieren, damit haben wir Entwickler aber eher weniger zutun. Für uns sind dahingehend aber folgende Fragen relevant:
-
-“In welchem Intervall sollen sich die Tablets zurücksetzen? (Täglich, Monatlich, Jährlich)”
-
+    <ul>
+        <li>🕛In welchem Intervall sollen sich die Tablets zurücksetzen? (Täglich, Monatlich, Jährlich)</li>
+    </ul>
 Die Tablets sollten sich auf jeden Fall zurücksetzen, weil Daten A Geld und B Speicher kosten (auch wenn eine Datenbank verwendet wird, muss das nicht sein).
 
 
@@ -92,7 +81,7 @@ Die Tablets sollten sich auf jeden Fall zurücksetzen, weil Daten A Geld und B S
     *"Menü wo die einzelnen Themen des Raums ausgewählt werden können"*
 </div>
 
-Über eine Art Home Menü zu gehen wäre eine weitere, gute Idee, die man an die NFC Idee anschließen könnte. 
+Über eine Art Home Menü zu gehen wäre eine weitere, gute Idee die man an die NFC Idee anschließen könnte. 
 
 
 <div className="quote">
@@ -111,26 +100,28 @@ Man könnte über Links oder eine “für diesen Bereich ebenfalls relevant-Sekt
     *"Feld zum Meinungsaustausch mit Besucher:innen (Pinwand)"*
 </div>
 
-Ein Whiteboard, dass über alle Tablets miteinander kommuniziert ist eine gute Idee. Dann stellt sich mir nur die Frage, wie die Tablets miteinander kommunizieren können? (Gibt es WLAN?)
+Ein Whiteboard, dass über alle Tablets miteinander kommuniziert ist eine gute Idee. Dann stellt sich mir nur diese Frage:
+
+    <ul>
+        <li>📶Über welche Schnittstelle können die Geräte miteinander kommunizieren? (WLAN? Bluetooth?)</li>
+    </ul>
 
 </div>
 
 <div className="section">
 
-## Projekt 3: Präsentation
+## 📼Interview
 
 <div className="quote">
     *"Beamerprojektion auf Plexiglasscheibe"*
 </div>
 
-Finde ich soweit sehr gut. Man könnte einen Beamer mit einer Motion Tracking Kamera installieren, der die Fingerbewegung der Nutzer tracken kann und so kann der User dann seinen Interviewpartner auswählen und erhält die entsprechende Information und sieht dann das Interview. 
-
-Ebenfalls interessant wäre eine Kamera, die direkt auf die Eingabefläche zeigt, sodass nur noch der Kontakt mit der Fläche getrackt werden muss.
+Finde ich soweit sehr gut. Man könnte einen Beamer mit einer Motion Tracking Kamera installieren, der die Fingerbewegung der Nutzer tracken kann und so kann der User dann seinen Interviewpartner auswählen und erhält die entsprechende Information und sieht dann das Interview. Ebenfalls interessant wäre eine Kamera, die direkt auf die Eingabefläche zeigt, sodass nur noch der Kontakt mit der Fläche getrackt werden muss.
 
 </div>
 
 ---
 
-## Schlusswort
+## 👋🏻Schlusswort
 
 Ich freue mich schon darauf in den direkt Austausch mit Frau Steffen oder Anderen vom Schloss treten zu können auf die Fragen Antworten zu erhalten.

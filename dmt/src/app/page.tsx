@@ -102,7 +102,7 @@ export default function Home() {
         </div>    
 
          <div className="quick-link-section bg-slate-900">
-          <h1>Quicklinks</h1>
+          <h1>🔖Quicklinks</h1>
          <QuickLinks/> 
           </div>         
          

@@ -28,7 +28,6 @@ import {
 import Navbar from "@/components/custom/Navbar";
 
 
-
 interface ArtikelInterface {
   title: string;
   des: string;
@@ -100,9 +99,7 @@ export default function Home() {
               </CommandList>
             </Command>
           </aside>
-        </div>
-
-
+        </div>      
     </div>
   );
 }

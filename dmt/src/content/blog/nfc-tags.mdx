@@ -1,0 +1,53 @@
+---
+title: 🔷NFC-Chips
+date: 07-09-2024
+img: /articleheads/nfc-dorito.jpeg
+des: Da die finale Präsentation verschoben wurde, hatten wir die Zeit die NFC Technologie einzubinden
+---
+
+# 📕Einleitung
+Da die Abschlusspräsentation um eine Woche verschoben wurde, hatten wir die Zeit ein weiteres Feature in das Projekt einzuarbeiten. Wir sprachen in den letzten Wochen davon den Präsentationsmodus / Viewmodus über NFC Tags zu implementieren.
+
+# 🟩Die NFC-Tags
+<img src="/articlecontents/nfc-tags/NFCTags.jpg" alt="NFC Tags"/>
+
+# ✒️Die Planung
+Wir machten uns zusammen folgende Gedanken. Mit dem roten Chip wird ein Tablet in das Master Tablet verwandelt. Mit dem grünen Chip wird ein Tablet zum Slave Tablet. Mit dem blauen Chip, wird das Tablet in den Ausgangszustand zurückversetzt.
+
+# 🔷Implementierung
+Für die Implementierung des Features entschieden wir uns dazu Code zu schreiben, da wir die Funktionalität nicht in Flutter Flow finden konnten.
+Nach ein bisschen Ausprobieren entstand diese finale Lösung:
+<br/>
+```dart
+
+    Future<init> changeToGuidePage(BuildContext context, NFCTag? tag) async {
+        if(tag == null){
+            print("No NFC Tag scannend.");
+            return 3;
+        }
+
+        String guideTag = "guideTag";
+        String visitorTag = "visitorTag";
+
+        bool? ndefAvailable = tag.ndefAvailable;
+        if(ndefAvailable != null && ndefAvailable) {
+            String data = 
+                (await FlutterNfcKit.readNDEFRecords()).firstOrNull.toString():
+                if(data.contains(guideTag)){
+                    return 0;
+                }
+                if(data.contains(visitorTag)){
+                    return 1;
+                }
+            }
+            print("Unknown NFC Tag.")
+            return 3;
+        }
+
+```
+<br/>
+
+-----
+
+# 👋🏻Schlusswort
+Schade ist, dass wir wahrscheinlich kein NFC fähiges Tablet mehr vor der mündlichen Prüfung kriegen werden. Wir haben die Funktion an einem Smartphone getestet und es funktioniert.

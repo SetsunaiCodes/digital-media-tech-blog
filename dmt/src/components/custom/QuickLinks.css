@@ -1,0 +1,27 @@
+
+
+.quick-link-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ql-card{
+    margin-top: 20px;
+    width: 570px;
+}
+
+.ql-card-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ql-card-link img{
+    height: 150px;
+    width: 170px;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}

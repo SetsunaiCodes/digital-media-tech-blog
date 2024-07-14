@@ -12,7 +12,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   Command,
@@ -26,6 +25,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import Navbar from "@/components/custom/Navbar";
+import QuickLinks from "@/components/custom/QuickLinks";
 
 
 interface ArtikelInterface {
@@ -99,7 +99,14 @@ export default function Home() {
               </CommandList>
             </Command>
           </aside>
-        </div>      
+        </div>    
+
+         <div className="quick-link-section bg-slate-900">
+          <h1>Quicklinks</h1>
+         <QuickLinks/> 
+          </div>         
+         
+        
     </div>
   );
 }

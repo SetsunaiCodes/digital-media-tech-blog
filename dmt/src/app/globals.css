@@ -91,3 +91,14 @@
 .react-icon{
   font-size: 40px;
 }
+
+.quick-link-section{
+  padding: 0 36px 20px 85px;
+
+}
+
+.quick-link-section h1{
+  font-size: 24px;
+  font-weight: 600;
+  padding-top: 10px;
+}

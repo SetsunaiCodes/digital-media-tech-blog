@@ -55,7 +55,7 @@ export default function QuickLinks() {
 function QLCards({ image, title, description, link }: QLCardsProps) {
     return (
         <Card className="ql-card">
-            <a href={link} className="ql-card-link">
+            <a href={link} className="ql-card-link" target="_blank">
                 <img src={image} alt={title} />
                 <div>
                     <CardHeader>
